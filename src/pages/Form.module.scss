@@ -1,0 +1,53 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+h4 {
+  margin-bottom: 1rem;
+}
+input {
+  height: 2rem;
+  line-height: 2rem;
+  margin-bottom: 0.5rem;
+  width: 300px;
+}
+
+select {
+  height: 2rem;
+  line-height: 2rem;
+  margin-bottom: 0.5rem;
+  width: 300px;
+}
+
+button {
+  height: 2rem;
+  width: 300px;
+}
+
+.modal {
+  background-color: #b6fdad;
+  color: #228d06;
+  margin-bottom: 1rem;
+  padding: 20px;
+  position: relative;
+}
+
+.close {
+  background-color: #228d06;
+  cursor: pointer;
+  height: 3px;
+  position: absolute;
+  right: 10px;
+  rotate: 45deg;
+  top: 33px;
+  width: 20px;
+}
+.close::after {
+  content: '';
+  cursor: pointer;
+  background-color: #228d06;
+  height: 3px;
+  position: absolute;
+  rotate: 90deg;
+  width: 20px;
+}
