@@ -77,6 +77,10 @@ function Form() {
         <select value={semester} onChange={handleSelectChange}>
           <option value="egzamin-inz-sem1">Semestr 1</option>
           <option value="egzamin-inz-sem2">Semestr 2</option>
+          <option value="egzamin-inz-sem3">Semestr 3</option>
+          <option value="egzamin-inz-sem4">Semestr 4</option>
+          <option value="egzamin-inz-sem5">Semestr 5</option>
+          <option value="egzamin-inz-sem6">Semestr 6</option>
         </select>
         <input
           type="text"
