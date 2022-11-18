@@ -1,62 +1,36 @@
-import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs } from 'firebase/firestore';
-import { useEffect, useState } from 'react';
+import { collection, getDocs } from 'firebase/firestore';
+import React, { useEffect, useState } from 'react';
 import styles from './Home.module.scss';
+import { db } from '../firebaseConfig';
 
 function Home() {
-  const [quizStart, setQuizStart] = useState<boolean>(false);
   const [currentSemester, setCurrentSemester] =
     useState<string>('egzamin-inz-sem1');
   const [data, setData] = useState<any[]>([]);
 
   useEffect(() => {
-    (async () => {
-      try {
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-          apiKey: 'AIzaSyA-Fmx7u8ETJoPggb36U4MUoue0zYEeQDc',
-          authDomain: 'recruiters-assistant.firebaseapp.com',
-          projectId: 'recruiters-assistant',
-          storageBucket: 'recruiters-assistant.appspot.com',
-          messagingSenderId: '303073489399',
-          appId: '1:303073489399:web:1718823450cbcff11d7ef2',
-          measurementId: 'G-PJMNN4PXF8',
-        };
-        // init firebase app
-        initializeApp(firebaseConfig);
-        // init services
-        const db = getFirestore();
-        // collection reference
-        const colRef = collection(db, currentSemester);
-        // get collection data
-        getDocs(colRef).then((snapshot) => {
-          let questions: { id: string }[] = [];
-          snapshot.docs.forEach((doc) => {
-            questions.push({ id: doc.id, ...doc.data() });
-          });
-          setData(questions);
-          console.log(questions);
-        });
-      } catch (e) {
-        console.error('Error fetching api data', e);
-      }
-    })();
-    return () => {
-      setData([]);
-    };
+    getData();
   }, [currentSemester]);
 
-  function startQuiz() {
-    setQuizStart((prev) => !prev);
-  }
+  const getData = async () => {
+    try {
+      const colRef = collection(db, currentSemester);
+      const data = await getDocs(colRef);
+      let questions: { id: string }[] = [];
+      data.docs.forEach((doc) => {
+        questions.push({ id: doc.id, ...doc.data() });
+      });
+      setData(questions);
+    } catch (e) {
+      console.error('Error fetching api data', e);
+    }
+  };
 
   function handleChange(e: React.ChangeEvent<HTMLSelectElement>) {
     const { value } = e.target;
     setCurrentSemester(value);
     console.log(value);
   }
-
-  function fetchData() {}
 
   const questions = data.map((question, id) => (
     <div key={id}>
