@@ -9,8 +9,6 @@ import { clearForm } from '../features/formSlice';
 import { handleSemesterChangeFn } from '../features/semesterSlice';
 
 function Form() {
-  // const [semester, setSemester] = useState<string>('egzamin-inz-sem1');
-
   const { isOpen } = useSelector((store: any) => store.confirm);
   const question = useSelector((store: any) => store.form);
   const { semester } = useSelector((store: any) => store.semester);
@@ -28,15 +26,6 @@ function Form() {
     });
   }
 
-  // function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
-  //   const { name, value } = e.target;
-  //   setFormData((prev) => ({
-  //     ...prev,
-  //     [name]: value,
-  //   }));
-  //   dispatch(closeConfirm());
-  // }
-
   function closeModalFn() {
     dispatch(toggleConfirm());
   }
@@ -49,7 +38,7 @@ function Form() {
           <div className={styles.close} onClick={closeModalFn}></div>
         </div>
       )}
-      <h4>Dodaj pytanie</h4>
+      <h4>Add question</h4>
       <form onSubmit={addQuestion} className={styles.form}>
         <select
           value={semester.value}
@@ -68,41 +57,16 @@ function Form() {
         <Input
           type="text"
           name="question"
-          // value={formData.content}
           placeholder="Question"
           required={true}
         />
-        <Input
-          type="text"
-          name="a"
-          // value={formData.a}
-          placeholder="Answer a"
-          required={true}
-        />
-        <Input
-          type="text"
-          name="b"
-          // value={formData.b}
-          placeholder="Answer b"
-          required
-        />
-        <Input
-          type="text"
-          name="c"
-          // value={formData.c}
-          placeholder="Answer c"
-          required
-        />
-        <Input
-          type="text"
-          name="d"
-          // value={formData.d}
-          placeholder="Answer d"
-        />
+        <Input type="text" name="a" placeholder="Answer a" required={true} />
+        <Input type="text" name="b" placeholder="Answer b" required />
+        <Input type="text" name="c" placeholder="Answer c" required />
+        <Input type="text" name="d" placeholder="Answer d" required />
         <Input
           type="text"
           name="answer"
-          // value={formData.answer}
           placeholder="Correct answer"
           required
         />
