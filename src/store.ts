@@ -3,7 +3,6 @@ import formReducer from './features/formSlice';
 import confirmReducer from './features/confirmSlice';
 import semesterReducer from './features/semesterSlice';
 import quizReducer from './features/quizSlice';
-
 export const store = configureStore({
   reducer: {
     form: formReducer,

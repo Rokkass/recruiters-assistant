@@ -18,6 +18,7 @@
   }
   button {
     cursor: pointer;
+    font-family: inherit;
     font-size: 1.1rem;
     line-height: 2rem;
     margin-bottom: 1rem;
@@ -49,7 +50,14 @@
 .form {
   display: flex;
   flex-direction: column;
+  font-family: inherit;
   gap: 1rem;
+}
+
+select,
+input,
+button {
+  font-family: inherit;
 }
 
 h1 {

@@ -14,9 +14,12 @@
     "firebase": "^9.13.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.7.1",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.3.0",
-    "sass": "^1.56.0"
+    "react-switch": "^7.0.0",
+    "sass": "^1.56.0",
+    "use-local-storage": "^2.3.6"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",

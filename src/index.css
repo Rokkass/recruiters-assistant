@@ -1,3 +1,17 @@
+:root {
+  --primary: #fff;
+  --secondary: #222;
+  --background: #eee;
+  --text-primary: #000;
+}
+
+[data-theme='dark'] {
+  --primary: #222;
+  --secondary: #fff;
+  --background: #222;
+  --text-primary: #fff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,11 +19,23 @@
 }
 
 html {
+  background-color: var(--background);
   font-family: 'Poppins', sans-serif;
+}
+
+.App {
+  background-color: var(--background);
+  color: var(--text-primary);
+  min-height: 100vh;
+  width: 100vw;
 }
 
 .container {
   font-size: 12px;
   margin-bottom: 30px;
-  padding: 0px 10px;
+  padding: 0 10px;
+}
+
+.responsive__nav {
+  transform: none;
 }

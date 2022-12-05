@@ -1,23 +1,101 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
 
-.navbar {
-  -webkit-box-shadow: 0px 0px 6px 0px rgba(66, 68, 90, 1);
-  -moz-box-shadow: 0px 0px 6px 0px rgba(66, 68, 90, 1);
-  box-shadow: 0px 0px 6px 0px rgba(66, 68, 90, 1);
-  border-bottom: 1px solid #eee;
+nav {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 80px;
+  justify-content: space-between;
   line-height: 4rem;
-  height: 4rem;
   margin-bottom: 2rem;
+  padding: 0.5rem;
 }
 ul {
   display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 .link {
-  color: black;
-  padding: 0px 2rem;
+  border: 1px solid transparent;
+  border-radius: 1rem;
+  color: var(--text-primary);
+  min-width: 130px;
+  padding: 0 1.25rem;
+  text-align: center;
   text-decoration: none;
 }
 
 .link:hover {
-  background-color: #eee;
+  border: 1px solid var(--text-primary);
+}
+
+.switch__container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  font-size: 0.8rem;
+  gap: 10px;
+  justify-content: center;
+  height: 100%;
+  width: 120px;
+}
+
+.navbar__button {
+  background-color: transparent;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  display: none;
+  visibility: hidden;
+  font-family: inherit;
+  height: 36px;
+  line-height: 2.6rem;
+}
+
+.theme__button {
+  display: block;
+  line-height: 4.2rem;
+  height: 100%;
+  visibility: visible;
+}
+.open__button {
+  font-size: 1.2rem;
+  width: 36px;
+}
+
+.close__button {
+  font-size: 1.2rem;
+  width: 36px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .navbar__button {
+    display: block;
+    visibility: visible;
+  }
+
+  nav ul {
+    background-color: var(--background);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+    transition: 1s;
+    transform: translateY(-100vh);
+  }
+
+  .link:hover {
+    background-color: var(--secondary);
+    color: var(--primary);
+    width: 90%;
+  }
+  .close__button:hover {
+    background-color: var(--secondary);
+    border-radius: 50%;
+    color: var(--primary);
+  }
 }
