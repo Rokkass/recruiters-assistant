@@ -13,12 +13,9 @@ function Form() {
   const question = useSelector((store: any) => store.form);
   const { semester } = useSelector((store: any) => store.semester);
   const dispatch = useDispatch();
-  console.log(semester);
 
   function addQuestion(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    console.log(semester);
-    console.log(question);
     const colRef = collection(db, semester.value);
     addDoc(colRef, question).then(() => {
       dispatch(clearForm());

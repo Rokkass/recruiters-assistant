@@ -28,13 +28,20 @@ const quizSlice = createSlice({
       state.userAnswers[id] = answer;
     },
     checkAnswers: (state) => {
-      state.userAnswers.map((ans, id) =>
-        // @ts-ignore
-        ans === state.questionsArray[id].answer
-          ? (state.score = state.score + 1)
-          : state.score
+      const condition: string[] = state.userAnswers.filter(
+        (ans: any) => ans.length > 0
       );
-      state.questionsArray = [];
+      if (condition.length === 6) {
+        state.userAnswers.map((ans, id) =>
+          // @ts-ignore
+          ans === state.questionsArray[id].answer
+            ? (state.score = state.score + 1)
+            : state.score
+        );
+        state.questionsArray = [];
+      } else {
+        alert('Enter all answers');
+      }
     },
     clearForm: (state) => {
       state.userAnswers = [];

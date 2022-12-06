@@ -135,15 +135,20 @@ function Home() {
           </button>
         </div>
       ) : quiz.questionsArray.length < 2 && quiz.userAnswers.length > 0 ? (
-        <>
+        <div className={styles.end__view}>
           <h1>Your score is: {quiz.score}</h1>
-          <button onClick={() => dispatch(clearForm())}>End quiz</button>
-        </>
+          <button
+            onClick={() => dispatch(clearForm())}
+            className={[styles.end__button, styles.home__button].join(' ')}
+          >
+            End quiz
+          </button>
+        </div>
       ) : (
         <div className={styles.form__container}>
           <h1>Recruiter's assistant</h1>
           <h3>Choose a topic:</h3>
-          <form onSubmit={startQuiz} className={styles.form}>
+          <form onSubmit={startQuiz} className={styles.start__form}>
             <select
               value={semester}
               onChange={(e) =>
@@ -184,7 +189,11 @@ function Home() {
               placeholder="E-mail"
               required
             />
-            <button>Start</button>
+            <button
+              className={[styles.start__button, styles.home__button].join(' ')}
+            >
+              Start
+            </button>
           </form>
         </div>
       )}
