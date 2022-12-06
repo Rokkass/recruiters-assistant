@@ -3,7 +3,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: calc(90vh - 112px);
+  margin-top: 2rem;
+  min-height: 100%;
   padding: 0 1rem;
   width: 100%;
 }
@@ -55,11 +56,12 @@
 .send__answers {
   background-color: #0074ff;
   border: none;
-  border-radius: 1.5rem;
+  border-radius: 0.4rem;
   color: #fff;
   cursor: pointer;
   font-size: 1.2rem;
   line-height: 1.8rem;
+  margin-bottom: 3rem;
   padding: 0.5rem 2rem;
   width: 150px;
 }
@@ -109,6 +111,4 @@ h1 {
 
 .end__view {
   text-align: center;
-}
-.end__button {
 }
