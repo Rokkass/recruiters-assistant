@@ -1,5 +1,11 @@
 .home__container {
-  padding: 1rem;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: calc(90vh - 112px);
+  padding: 0 1rem;
+  width: 100%;
 }
 
 .quiz__container {
@@ -8,30 +14,41 @@
   flex-direction: column;
 }
 
+.form__container {
+  max-width: 700px;
+  width: 90%;
+}
+
 .question__container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 700px;
+  width: 90%;
   p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin-bottom: 1rem;
   }
   button {
+    background-color: var(--quiz__button);
+    border: 0;
+    border-radius: 0.4rem;
+    color: #fff;
     cursor: pointer;
-    font-family: inherit;
-    font-size: 1.1rem;
-    line-height: 2rem;
+    font-weight: 600;
+    font-size: 1.3rem;
     margin-bottom: 1rem;
-    max-width: 400px;
-    padding: 0.4rem;
     width: 100%;
+    &:hover {
+      background-color: var(--hover);
+      //border: 1px solid var(--secondary);
+    }
     &:last-child {
       margin-bottom: 3rem;
     }
   }
   .active {
-    border: 2px solid #d5ca00;
-    background: transparent;
+    background-color: var(--hover);
   }
 }
 
@@ -47,19 +64,51 @@
   width: 150px;
 }
 
-.form {
+.start__form {
   display: flex;
   flex-direction: column;
   font-family: inherit;
   gap: 1rem;
 }
 
-select,
+.start__button {
+}
+
+.start__form select,
 input,
-button {
+button,
+select {
+  border: 2px solid var(--secondary);
+  border-radius: 0.4rem;
+  color: var(--primary);
   font-family: inherit;
+  line-height: 3rem;
+  height: 3rem;
+  font-size: 1.2rem;
+  padding: 0 1rem;
 }
 
 h1 {
   margin-bottom: 1rem;
+}
+
+.home__container .home__button {
+  background-color: var(--quiz__button);
+  border: 0;
+  border-radius: 0.4rem;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.3rem;
+  height: 3rem;
+  &:hover {
+    background-color: var(--hover);
+    //border: 2px solid var(--primary);
+  }
+}
+
+.end__view {
+  text-align: center;
+}
+.end__button {
 }
