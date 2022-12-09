@@ -1,7 +1,8 @@
 import styles from './Input.module.scss';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { handleInputChangeFn } from '../../features/formSlice';
+import { handleInputChangeFn } from '../../features/dashboardSlice';
+import { handleAuthInputChange } from '../../features/authSlice';
 
 interface InputProps {
   type: string;
@@ -12,12 +13,28 @@ interface InputProps {
 }
 
 const Input = ({ type, name, placeholder, required }: InputProps) => {
+  const newValue = useSelector((store: any) => store.dashboard[name]);
+  const authValue = useSelector((store: any) => store.auth[name]);
   const dispatch = useDispatch();
-  const newValue = useSelector((store: any) => store.form[name]);
 
   return (
     <div className={styles.form__group + ' ' + styles.field}>
-      {required ? (
+      {(name === 'email' || name === 'password') && (
+        <label className={styles.input__label}>{name}:</label>
+      )}
+      {type === 'email' || type === 'password' ? (
+        <input
+          type={type}
+          name={name}
+          value={authValue}
+          onChange={(e) =>
+            dispatch(handleAuthInputChange({ name, value: e.target.value }))
+          }
+          className={styles.form__field}
+          placeholder={placeholder}
+          required
+        />
+      ) : required ? (
         <input
           type={type}
           name={name}

@@ -39,10 +39,10 @@
     font-weight: 600;
     font-size: 1.3rem;
     margin-bottom: 1rem;
+    padding: 0.5rem 0;
     width: 100%;
     &:hover {
       background-color: var(--hover);
-      //border: 1px solid var(--secondary);
     }
     &:last-child {
       margin-bottom: 3rem;
@@ -84,9 +84,8 @@ select {
   border-radius: 0.4rem;
   color: var(--primary);
   font-family: inherit;
-  line-height: 3rem;
-  height: 3rem;
   font-size: 1.2rem;
+  min-height: 3rem;
   padding: 0 1rem;
 }
 

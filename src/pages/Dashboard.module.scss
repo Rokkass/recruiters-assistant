@@ -1,19 +1,22 @@
-.form__container {
+.dashboard__header {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.dashboard__container {
   align-items: center;
   color: var(--text-primary);
   display: flex;
   flex-direction: column;
+  padding-bottom: 2rem;
   width: 100%;
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width: 500px;
   max-width: 90%;
-}
-h4 {
-  margin-bottom: 1rem;
 }
 
 .form__select {
@@ -29,7 +32,7 @@ h4 {
   padding: 0 1rem;
 }
 
-.form__submit {
+.dashboard__button {
   background-color: var(--secondary);
   border: 0;
   border-radius: 0.4rem;
@@ -72,4 +75,15 @@ h4 {
   position: absolute;
   rotate: 90deg;
   width: 20px;
+}
+
+.logOut__button {
+  background-color: var(--hover);
+  cursor: pointer;
+  margin: 0 1rem;
+  max-width: 200px;
+
+  &:hover {
+    background-color: var(--secondary);
+  }
 }

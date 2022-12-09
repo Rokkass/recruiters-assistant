@@ -14,8 +14,8 @@ interface Action {
   value: string;
 }
 
-const formSlice = createSlice({
-  name: 'form',
+const dashboardSlice = createSlice({
+  name: 'dashboard',
   initialState,
   reducers: {
     handleInputChangeFn: (state, action) => {
@@ -28,5 +28,5 @@ const formSlice = createSlice({
   },
 });
 
-export const { handleInputChangeFn, clearForm } = formSlice.actions;
-export default formSlice.reducer;
+export const { handleInputChangeFn, clearForm } = dashboardSlice.actions;
+export default dashboardSlice.reducer;
