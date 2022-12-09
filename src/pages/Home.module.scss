@@ -77,9 +77,9 @@
 }
 
 .start__form select,
-input,
-button,
-select {
+.start__form input,
+.start__form button,
+.start__form select {
   border: 2px solid var(--secondary);
   border-radius: 0.4rem;
   color: var(--primary);

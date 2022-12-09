@@ -42,32 +42,41 @@ ul {
 .navbar__button {
   background-color: transparent;
   border: 0;
+  border-radius: 0.5rem;
   color: inherit;
   cursor: pointer;
   display: none;
-  visibility: hidden;
   font-family: inherit;
-  height: 36px;
-  line-height: 2.6rem;
+  padding: 0.3rem 0.5rem 0 0.5rem;
+  visibility: hidden;
 }
 
 .theme__button {
   display: block;
-  line-height: 4.2rem;
+  line-height: 3.6rem;
   font-weight: 800;
   font-size: 1.1rem;
-  height: 100%;
+  padding: 0 0.5rem;
   visibility: visible;
 }
 .open__button {
   font-size: 1.2rem;
   width: 36px;
+  &:hover {
+    background-color: var(--secondary);
+    border-radius: 50%;
+    color: var(--text-secondary);
+  }
 }
 
 .close__button {
   font-size: 1.2rem;
-  padding: 0;
   width: 36px;
+  &:hover {
+    background-color: var(--secondary);
+    border-radius: 50%;
+    color: var(--text-secondary);
+  }
 }
 
 @media only screen and (max-width: 1024px) {
@@ -94,10 +103,5 @@ ul {
     background-color: var(--secondary);
     color: var(--text-secondary);
     width: 90%;
-  }
-  .close__button:hover {
-    background-color: var(--secondary);
-    border-radius: 50%;
-    color: var(--text-secondary);
   }
 }
