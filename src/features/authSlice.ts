@@ -20,7 +20,7 @@ const authSlice = createSlice({
       state[name as keyof typeof state] = value;
     },
     clearAuthForm: (state) => {
-      state = {
+      return {
         ...state,
         email: '',
         password: '',
