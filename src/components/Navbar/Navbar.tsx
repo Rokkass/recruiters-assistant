@@ -25,8 +25,8 @@ const Navbar = (props: any) => {
         <NavLink to="/questions" className={styles.link} onClick={toggleNavbar}>
           Questions
         </NavLink>
-        <NavLink to="/form" className={styles.link} onClick={toggleNavbar}>
-          Add questions
+        <NavLink to="/dashboard" className={styles.link} onClick={toggleNavbar}>
+          Sign in
         </NavLink>
         <button
           className={`${styles.close__button} ${styles.navbar__button}`}

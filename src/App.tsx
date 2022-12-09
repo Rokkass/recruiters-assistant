@@ -1,7 +1,7 @@
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
-import Form from './pages/Form';
+import Dashboard from './pages/Dashboard';
 import Navbar from './components/Navbar/Navbar';
 import List from './pages/List';
 import useLocalStorage from 'use-local-storage';
@@ -21,7 +21,7 @@ export function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/questions" element={<List />} />
-          <Route path="/form" element={<Form />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
