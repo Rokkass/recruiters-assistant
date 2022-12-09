@@ -20,7 +20,6 @@ function Dashboard() {
 
   function addQuestion(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    console.log(question);
     const colRef = collection(db, semester.value);
     addDoc(colRef, question).then(() => {
       dispatch(clearForm());
@@ -32,8 +31,6 @@ function Dashboard() {
     e.preventDefault();
     signInWithEmailAndPassword(auth, authData.email, authData.password)
       .then((res) => {
-        console.log(res.user);
-        console.log(auth);
         dispatch(setUser(res.user.email));
         dispatch(clearAuthForm());
       })
@@ -44,8 +41,6 @@ function Dashboard() {
     signOut(auth)
       .then(() => {
         dispatch(removeUser());
-        console.log('Sign-out successful.');
-        console.log(authData);
       })
       .catch((err) => {
         alert(err.message);
