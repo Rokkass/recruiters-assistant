@@ -20,6 +20,7 @@ function Home() {
       data.docs.forEach((doc) => {
         questions.push({ id: doc.id, ...doc.data() });
       });
+      console.log(questions);
       setData(questions);
     } catch (e) {
       console.error('Error fetching api data', e);

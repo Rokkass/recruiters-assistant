@@ -4,20 +4,22 @@ const initialState = {
   email: '',
   password: '',
   user: '',
+  codes: [],
 };
-
-interface Action {
-  name: string;
-  value: string;
-}
 
 const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    handleAuthInputChange: (state, action) => {
-      const { name, value }: Action = action.payload;
-      state[name as keyof typeof state] = value;
+    handleAuthInputChange: (
+      state,
+      action: { payload: { name: string; value: string } }
+    ) => {
+      const { name, value } = action.payload;
+      return {
+        ...state,
+        [name as keyof typeof state]: value,
+      };
     },
     clearAuthForm: (state) => {
       return {
@@ -30,12 +32,27 @@ const authSlice = createSlice({
       state.user = action.payload;
     },
     removeUser: (state) => {
-      state.user = '';
+      return {
+        ...state,
+        user: '',
+        codes: [],
+      };
+    },
+    setCodes: (state, action) => {
+      return {
+        ...state,
+        codes: action.payload,
+      };
     },
   },
 });
 
-export const { handleAuthInputChange, clearAuthForm, setUser, removeUser } =
-  authSlice.actions;
+export const {
+  handleAuthInputChange,
+  clearAuthForm,
+  setUser,
+  removeUser,
+  setCodes,
+} = authSlice.actions;
 
 export default authSlice.reducer;
