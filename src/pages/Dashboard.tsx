@@ -47,6 +47,7 @@ function Dashboard() {
 
   useEffect(() => {
     getCodes();
+    !authData.user && signOutUser();
   }, [authData.user]);
 
   const getCodes = async () => {
@@ -95,15 +96,18 @@ function Dashboard() {
     e.preventDefault();
     const dataToSend = {
       candidatesEmail: candidatesEmail,
-      recruiter: authData.user,
+      // recruiter: authData.user,
+      recruiter: auth.currentUser?.email,
       score: -1,
       topic: semester,
     };
     const colRef = collection(db, 'tests-id');
-    addDoc(colRef, dataToSend).then(() => {
-      dispatch(clearGenerateForm());
-      getCodes();
-    });
+    console.log(auth.currentUser);
+    auth.currentUser?.email !== null &&
+      addDoc(colRef, dataToSend).then(() => {
+        dispatch(clearGenerateForm());
+        getCodes();
+      });
   }
   function removeCode(id: string) {
     let dataToDelete = doc(db, 'tests-id', id);
@@ -126,7 +130,11 @@ function Dashboard() {
 
   return (
     <div className={styles.dashboard__container}>
-      <h4 className={styles.dashboard__header}>Welcome {authData.user}</h4>
+      {auth.currentUser !== null && (
+        <h4 className={styles.dashboard__header}>
+          Welcome {auth.currentUser.email}!
+        </h4>
+      )}
       {!auth.currentUser && (
         <form onSubmit={signIn} className={styles.form}>
           <Input
@@ -259,6 +267,8 @@ function Dashboard() {
               <option value="egzamin-inz-sem4">Semestr 4</option>
               <option value="egzamin-inz-sem5">Semestr 5</option>
               {/*<option value="egzamin-inz-sem6">Semestr 6</option>*/}
+              <option value="frontend-junior">Junior Frontend</option>
+              <option value="frontend-regular">Regular Frontend</option>
             </select>
             <Input
               type="text"
