@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  semester: 'egzamin-inz-sem1',
+  topic: 'egzamin-inz-sem1',
   candidatesEmail: '',
 };
 
@@ -10,7 +10,7 @@ const semesterSlice = createSlice({
   initialState,
   reducers: {
     handleSemesterChangeFn: (state, action) => {
-      state.semester = action.payload;
+      state.topic = action.payload;
     },
     handleEmailChangeFn: (state, action) => {
       state.candidatesEmail = action.payload;

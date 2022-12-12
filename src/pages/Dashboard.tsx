@@ -37,7 +37,7 @@ import {
 
 function Dashboard() {
   const { isOpen } = useSelector((store: any) => store.confirm);
-  const { semester, candidatesEmail } = useSelector(
+  const { topic, candidatesEmail } = useSelector(
     (store: any) => store.semester
   );
   const authData = useSelector((store: any) => store.auth);
@@ -68,7 +68,9 @@ function Dashboard() {
   };
   function addQuestion(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const colRef = collection(db, semester.value);
+    console.log(question);
+    console.log(topic);
+    const colRef = collection(db, topic);
     addDoc(colRef, question).then(() => {
       dispatch(clearForm());
       dispatch(toggleConfirm());
@@ -99,7 +101,7 @@ function Dashboard() {
       // recruiter: authData.user,
       recruiter: auth.currentUser?.email,
       score: -1,
-      topic: semester,
+      topic: topic,
     };
     const colRef = collection(db, 'tests-id');
     console.log(auth.currentUser);
@@ -165,7 +167,7 @@ function Dashboard() {
           <h4 className={styles.dashboard__header}>Generate test</h4>
           <form onSubmit={generateTest} className={styles.form}>
             <select
-              value={semester.value}
+              value={topic}
               onChange={(e) => dispatch(handleSemesterChangeFn(e.target.value))}
               className={styles.form__input}
             >
@@ -175,6 +177,8 @@ function Dashboard() {
               <option value="egzamin-inz-sem4">Semestr 4</option>
               <option value="egzamin-inz-sem5">Semestr 5</option>
               {/*<option value="egzamin-inz-sem6">Semestr 6</option>*/}
+              <option value="frontend-junior">Junior Frontend</option>
+              <option value="frontend-regular">Regular Frontend</option>
             </select>
             <input
               type="text"
@@ -257,7 +261,7 @@ function Dashboard() {
           <h4 className={styles.dashboard__header}>Add question</h4>
           <form onSubmit={addQuestion} className={styles.form}>
             <select
-              value={semester.value}
+              value={topic}
               onChange={(e) => dispatch(handleSemesterChangeFn(e.target.value))}
               className={styles.form__input}
             >
