@@ -57,9 +57,11 @@ function Home() {
           <option value="egzamin-inz-sem1">Semestr 1</option>
           <option value="egzamin-inz-sem2">Semestr 2</option>
           <option value="egzamin-inz-sem3">Semestr 3</option>
-          <option value="egzamin-inz-sem3">Semestr 4</option>
-          <option value="egzamin-inz-sem3">Semestr 5</option>
-          <option value="egzamin-inz-sem3">Semestr 6</option>
+          <option value="egzamin-inz-sem4">Semestr 4</option>
+          <option value="egzamin-inz-sem5">Semestr 5</option>
+          {/*<option value="egzamin-inz-sem6">Semestr 6</option>*/}
+          <option value="frontend-junior">Frontend Junior</option>
+          <option value="frontend-regular">Frontend Regular</option>
         </select>
       </form>
       {/*<button onClick={startQuiz}>Start</button>*/}

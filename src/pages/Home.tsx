@@ -23,13 +23,13 @@ interface Question {
 }
 
 function Home() {
-  const { semester } = useSelector((store: any) => store.semester.semester);
+  const { topic } = useSelector((store: any) => store.semester);
   const quiz = useSelector((store: any) => store.quiz);
   const dispatch = useDispatch();
 
   const getData = async () => {
     try {
-      const colRef = collection(db, semester ? semester : 'egzamin-inz-sem1');
+      const colRef = collection(db, topic ? topic : 'egzamin-inz-sem1');
       const data = await getDocs(colRef);
       let questions: { id: string }[] = [];
       data.docs.forEach((doc) => {
@@ -150,10 +150,8 @@ function Home() {
           <h3>Choose a topic:</h3>
           <form onSubmit={startQuiz} className={styles.start__form}>
             <select
-              value={semester}
-              onChange={(e) =>
-                dispatch(handleSemesterChangeFn({ semester: e.target.value }))
-              }
+              value={topic}
+              onChange={(e) => dispatch(handleSemesterChangeFn(e.target.value))}
             >
               <option value="egzamin-inz-sem1">Semestr 1</option>
               <option value="egzamin-inz-sem2">Semestr 2</option>
