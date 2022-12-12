@@ -68,8 +68,6 @@ function Dashboard() {
   };
   function addQuestion(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    console.log(question);
-    console.log(topic);
     const colRef = collection(db, topic);
     addDoc(colRef, question).then(() => {
       dispatch(clearForm());
@@ -274,12 +272,7 @@ function Dashboard() {
               <option value="frontend-junior">Junior Frontend</option>
               <option value="frontend-regular">Regular Frontend</option>
             </select>
-            <Input
-              type="text"
-              name="question"
-              placeholder="Question"
-              required
-            />
+            <Input type="text" name="content" placeholder="Question" required />
             <Input type="text" name="a" placeholder="Answer a" required />
             <Input type="text" name="b" placeholder="Answer b" required />
             <Input type="text" name="c" placeholder="Answer c" required />
