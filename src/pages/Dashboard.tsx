@@ -102,7 +102,6 @@ function Dashboard() {
       topic: topic,
     };
     const colRef = collection(db, 'tests-id');
-    console.log(auth.currentUser);
     auth.currentUser?.email !== null &&
       addDoc(colRef, dataToSend).then(() => {
         dispatch(clearGenerateForm());
@@ -229,7 +228,13 @@ function Dashboard() {
                   <tr key={id}>
                     <td>{code.candidatesEmail}</td>
                     <td>{code.topic}</td>
-                    <td>{code.score < 0 ? 'unfinished' : code.score}</td>
+                    <td>
+                      {code.score === -1
+                        ? 'unfinished'
+                        : code.score === -2
+                        ? 'no answers'
+                        : code.score}
+                    </td>
                     <td>{code.id}</td>
                     <td>
                       <button

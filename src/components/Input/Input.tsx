@@ -58,9 +58,6 @@ const Input = ({ type, name, placeholder, required }: InputProps) => {
           placeholder={placeholder}
         />
       )}
-      {/*<label htmlFor="name" className={styles.form__label}>*/}
-      {/*  {name === 'content' ? 'Question' : name}*/}
-      {/*</label>*/}
     </div>
   );
 };
