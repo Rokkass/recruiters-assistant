@@ -7,6 +7,9 @@
   min-height: 100%;
   padding: 0 1rem;
   width: 100%;
+  h1 {
+    margin-bottom: 2rem;
+  }
 }
 
 .quiz__container {
@@ -63,20 +66,18 @@
   line-height: 1.8rem;
   margin-bottom: 3rem;
   padding: 0.5rem 2rem;
-  width: 150px;
+  width: 200px;
+  &:hover {
+    background-color: var(--hover);
+  }
 }
 
 .start__form {
   display: flex;
   flex-direction: column;
   font-family: inherit;
-  gap: 1rem;
 }
 
-.start__button {
-}
-
-.start__form select,
 .start__form input,
 .start__form button,
 .start__form select {
@@ -85,12 +86,13 @@
   color: var(--primary);
   font-family: inherit;
   font-size: 1.2rem;
+  margin-bottom: 1rem;
   min-height: 3rem;
   padding: 0 1rem;
 }
-
-h1 {
-  margin-bottom: 1rem;
+.input__label {
+  font-size: 1rem;
+  margin-bottom: 0;
 }
 
 .home__container .home__button {
@@ -109,5 +111,23 @@ h1 {
 }
 
 .end__view {
+  height: 100%;
+  padding-top: 25vh;
   text-align: center;
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+.start__button:disabled {
+  background-color: #ccc;
+  &:hover {
+    background-color: #ccc;
+    cursor: default;
+  }
+}
+.end__button {
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  padding: 1rem;
 }
