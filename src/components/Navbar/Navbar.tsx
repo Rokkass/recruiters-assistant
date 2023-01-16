@@ -28,6 +28,9 @@ const Navbar = (props: any) => {
         <NavLink to="/dashboard" className={styles.link} onClick={toggleNavbar}>
           Sign in
         </NavLink>
+        <NavLink to="/contact" className={styles.link} onClick={toggleNavbar}>
+          Contact
+        </NavLink>
         <button
           className={`${styles.close__button} ${styles.navbar__button}`}
           onClick={toggleNavbar}
