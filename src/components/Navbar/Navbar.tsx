@@ -2,8 +2,10 @@ import styles from './Navbar.module.scss';
 import { NavLink } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { useRef } from 'react';
+import { useSelector } from 'react-redux';
 
 const Navbar = (props: any) => {
+  const { user } = useSelector((store: any) => store.auth);
   const navRef = useRef<HTMLUListElement>(null);
   const toggleNavbar = () => {
     // index.css style
@@ -22,11 +24,11 @@ const Navbar = (props: any) => {
         <NavLink to="/" className={styles.link} onClick={toggleNavbar}>
           Home
         </NavLink>
-        <NavLink to="/questions" className={styles.link} onClick={toggleNavbar}>
-          Questions
-        </NavLink>
+        {/*<NavLink to="/questions" className={styles.link} onClick={toggleNavbar}>*/}
+        {/*  Questions*/}
+        {/*</NavLink>*/}
         <NavLink to="/dashboard" className={styles.link} onClick={toggleNavbar}>
-          Sign in
+          {user ? 'Dashboard' : 'Sign in'}
         </NavLink>
         <button
           className={`${styles.close__button} ${styles.navbar__button}`}
