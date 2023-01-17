@@ -4,6 +4,7 @@ import NotFound from './pages/NotFound';
 import Dashboard from './pages/Dashboard';
 import Navbar from './components/Navbar/Navbar';
 import List from './pages/List';
+import Contact from './pages/Contact'; 
 import useLocalStorage from 'use-local-storage';
 
 export function App() {
@@ -22,7 +23,7 @@ export function App() {
           <Route path="/" element={<Home />} />
           <Route path="/questions" element={<List />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/contact" element={<div> CONTACT !</div>} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
