@@ -112,17 +112,12 @@ function Dashboard() {
     let dataToDelete = doc(db, 'tests-id', id);
     deleteDoc(dataToDelete)
       .then(() => {
-        console.log('Deleted');
         getCodes();
       })
       .catch((err) => {
         console.log(err.message);
       });
   }
-  // TODO: Generating tests
-  // function generateTest(e: React.FormEvent<HTMLFormElement>) {
-  //   e.preventDefault();
-  // }
   function closeModalFn() {
     dispatch(toggleConfirm());
   }

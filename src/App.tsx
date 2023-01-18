@@ -4,7 +4,7 @@ import NotFound from './pages/NotFound';
 import Dashboard from './pages/Dashboard';
 import Navbar from './components/Navbar/Navbar';
 import List from './pages/List';
-import Contact from './pages/Contact'; 
+import Contact from './pages/Contact';
 import useLocalStorage from 'use-local-storage';
 
 export function App() {
