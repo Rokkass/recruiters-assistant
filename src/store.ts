@@ -12,5 +12,5 @@ export const store = configureStore({
     semester: semesterReducer,
     quiz: quizReducer,
   },
-  devTools: true,
+  devTools: false,
 });
