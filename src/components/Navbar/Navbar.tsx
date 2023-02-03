@@ -24,9 +24,6 @@ const Navbar = (props: any) => {
         <NavLink to="/" className={styles.link} onClick={toggleNavbar}>
           Home
         </NavLink>
-        {/*<NavLink to="/questions" className={styles.link} onClick={toggleNavbar}>*/}
-        {/*  Questions*/}
-        {/*</NavLink>*/}
         <NavLink to="/dashboard" className={styles.link} onClick={toggleNavbar}>
           {user ? 'Dashboard' : 'Sign in'}
         </NavLink>

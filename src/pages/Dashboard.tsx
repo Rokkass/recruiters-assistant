@@ -96,7 +96,6 @@ function Dashboard() {
     e.preventDefault();
     const dataToSend = {
       candidatesEmail: candidatesEmail,
-      // recruiter: authData.user,
       recruiter: auth.currentUser?.email,
       score: -1,
       topic: topic,
@@ -163,14 +162,13 @@ function Dashboard() {
               onChange={(e) => dispatch(handleSemesterChangeFn(e.target.value))}
               className={styles.form__input}
             >
+              <option value="frontend-junior">Junior Frontend</option>
+              <option value="frontend-regular">Regular Frontend</option>
               <option value="egzamin-inz-sem1">Semestr 1</option>
               <option value="egzamin-inz-sem2">Semestr 2</option>
               <option value="egzamin-inz-sem3">Semestr 3</option>
               <option value="egzamin-inz-sem4">Semestr 4</option>
               <option value="egzamin-inz-sem5">Semestr 5</option>
-              {/*<option value="egzamin-inz-sem6">Semestr 6</option>*/}
-              <option value="frontend-junior">Junior Frontend</option>
-              <option value="frontend-regular">Regular Frontend</option>
             </select>
             <input
               type="text"
@@ -263,14 +261,13 @@ function Dashboard() {
               onChange={(e) => dispatch(handleSemesterChangeFn(e.target.value))}
               className={styles.form__input}
             >
+              <option value="frontend-junior">Junior Frontend</option>
+              <option value="frontend-regular">Regular Frontend</option>
               <option value="egzamin-inz-sem1">Semestr 1</option>
               <option value="egzamin-inz-sem2">Semestr 2</option>
               <option value="egzamin-inz-sem3">Semestr 3</option>
               <option value="egzamin-inz-sem4">Semestr 4</option>
               <option value="egzamin-inz-sem5">Semestr 5</option>
-              {/*<option value="egzamin-inz-sem6">Semestr 6</option>*/}
-              <option value="frontend-junior">Junior Frontend</option>
-              <option value="frontend-regular">Regular Frontend</option>
             </select>
             <Input type="text" name="content" placeholder="Question" required />
             <Input type="text" name="a" placeholder="Answer a" required />

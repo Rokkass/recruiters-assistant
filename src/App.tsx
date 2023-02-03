@@ -3,7 +3,6 @@ import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Dashboard from './pages/Dashboard';
 import Navbar from './components/Navbar/Navbar';
-import List from './pages/List';
 import Contact from './pages/Contact';
 import useLocalStorage from 'use-local-storage';
 
@@ -21,7 +20,6 @@ export function App() {
       <div className="container">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/questions" element={<List />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />

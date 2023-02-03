@@ -50,28 +50,6 @@ const quizSlice = createSlice({
         ? (state.score = state.score + 1)
         : state.score;
     },
-    // handleAnswer: (state, action) => {
-    //   const { id, answer } = action.payload;
-    //   // @ts-ignore
-    //   state.userAnswers[id] = answer;
-    // },
-    // checkAnswers: (state) => {
-    //   const condition: string[] = state.userAnswers.filter(
-    //     (ans: any) => ans.length > 0
-    //   );
-    //   if (condition.length === 6) {
-    //     state.score = 0;
-    //     state.userAnswers.map((ans, id) =>
-    //       // @ts-ignore
-    //       ans === state.questionsArray[id].answer
-    //         ? (state.score = state.score + 1)
-    //         : state.score
-    //     );
-    //     state.questionsArray = [];
-    //   } else {
-    //     alert('Enter all answers');
-    //   }
-    // },
     clearForm: (state) => {
       state.userAnswers = [];
       state.score = 0;

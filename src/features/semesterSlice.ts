@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  topic: 'egzamin-inz-sem1',
+  topic: 'frontend-junior',
   candidatesEmail: '',
 };
 

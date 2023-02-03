@@ -1,11 +1,5 @@
 ## Recruiter's assistant
 
-App created by Tomasz Macioł, Magdalena Zawodny, Michał Sroka
+Aplikacja "Recruiter's assistant" pozwala wygenerować indywidualny test z bazy pytań dla rekrutującego. Rekruter generuje kod dla rekrutanta, dzięki któremu może on przystąpić do testu. Na końcu po udzieleniu wszystkich odpowiedzi wyświetla nam się wynik testu. Quiz jest jednorazowy i nie można drugi raz go wykonać bez nowego kodu.
 
-This setup includes:
-* [vite](https://vitejs.dev/)
-* [eslint](https://eslint.org/), [typescript-eslint](https://typescript-eslint.io/), [eslint-airbnb-config](https://github.com/airbnb/javascript), [prettier](https://prettier.io/)
-* [vitest](https://vitest.dev/), [jsdom](https://github.com/jsdom/jsdom), [@testing-library](https://testing-library.com/)
-* [react-router v6](https://reactrouter.com/en/main)
-
-Starter Pack from Coding Garden https://github.com/CodingGarden/react-ts-starter
+Aplikacja stworzona przez Tomasza Macioła, Magdalenę Zawodny i Michała Srokę.
